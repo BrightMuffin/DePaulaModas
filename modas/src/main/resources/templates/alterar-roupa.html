@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Alterar roupa</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>Alteração de Roupas</h1>
+		</div>
+
+		<div class="row">
+			<div class="col-lg3">
+				<a th:href="@{/roupas}" class="btn btn-primary">Voltar</a>
+			</div>
+			<div class="row">
+				<form method="post" th:action="@{/roupas/alterar}" th:object="${roupa}">
+				
+				<input type="hidden" class="form-control" id="txtId" th:field="*{id}">
+					<div class="mb-3">
+						<label for="txtId" class="form-label">Código:
+							</label> <input type="text" class="form-control"
+							id="txtId" aria-describedby="emailHelp" th:field="*{id}">
+				
+					</div>
+					<div class="mb-3">
+						<label for="txtNome" class="form-label">Nome:</label>
+						<input type="text" class="form-control"
+							id="txtNome" th:field="*{nome}">
+					</div>
+					<div class="mb-3">
+						<label for="txtMarca" class="form-label">Marca:</label>
+						<input type="text" class="form-control"
+							id="txtMarca" th:field="*{marca}">
+					</div>
+					<div class="mb-3">
+						<label for="txtPreco" class="form-label">Preço:</label>
+						<input type="text" class="form-control"
+							id="txtPreco" th:field="*{preco}">
+					</div>
+					<div class="mb-3">
+						<label for="txtTamanho" class="form-label">Tamanho:</label>
+						<input type="text" class="form-control"
+							id="txtTamanho" th:field="*{tamanho}">
+					</div>
+					<div class="mb-3">
+						<label for="txtEstoque" class="form-label">Estoque:</label>
+						<input type="text" class="form-control"
+							id="txtEstoque" th:field="*{estoque}">
+					</div>
+					<button type="submit" class="btn btn-primary">Salvar</button>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Estoque</title>
+</head>
+<body>
+<div class="container">
+		<div class="row">
+			<h1>DePaula Modas - Listagem de Estoque</h1>
+
+		</div>
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Marca</th>
+						<th scope="col">Preço</th>
+						<th scope="col">Tamanho</th>
+						<th scope="col">Estoque</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="roupa : ${roupa}">
+						<td th:text="${roupa.id}"></td>
+						<td th:text="${roupa.nome}"></td>
+						<td th:text="${roupa.marca}"></td>
+						<td th:text="${roupa.preco}"></td>
+						<td th:text="${roupa.tamanho}"></td>
+						<td th:text="${roupa.estoque}"></td>
+						<td>
+							<a class="btn btn-success" th:href="@{/roupas/alterar/{id}(id=${roupa.id})}">Alterar</a>
+							<a class="btn btn-danger">Excluir</a>
+						</td>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-lg3">
+				<a th:href="@{/roupas/novo}">Incluir</a>
+			</div>
+		</div>
+</body>
+</html>
