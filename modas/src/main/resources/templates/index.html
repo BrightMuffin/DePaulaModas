@@ -24,7 +24,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="roupa : ${roupa}">
+					<tr th:each="roupa : ${roupas}">
 						<td th:text="${roupa.id}"></td>
 						<td th:text="${roupa.nome}"></td>
 						<td th:text="${roupa.marca}"></td>
@@ -32,8 +32,8 @@
 						<td th:text="${roupa.tamanho}"></td>
 						<td th:text="${roupa.estoque}"></td>
 						<td>
-							<a class="btn btn-success" th:href="@{/roupas/alterar/{id}(id=${roupa.id})}">Alterar</a>
-							<a class="btn btn-danger">Excluir</a>
+							<a class="btn btn-success" th:href="@{/roupas/alterar/{id}(id=${roupa.id})}" >Alterar</a>
+							<a class="btn btn-danger" th:href="@{/roupas/excluir/{id}(id=${roupa.id})}" >Excluir</a>
 						</td>
 				</tbody>
 			</table>

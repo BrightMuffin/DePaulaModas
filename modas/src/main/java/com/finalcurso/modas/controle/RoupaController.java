@@ -47,4 +47,26 @@ public class RoupaController {
 		roupaRepositorio.save(roupa);
 		return "redirect:/roupas";
 	}
+	
+	@GetMapping("/roupas/alterar/{id}")
+	public String abrirAlterarRoupa(@PathVariable Long id , Model model) {
+		Roupa roupa = this.roupaServiceImpl.obterRoupa(id);
+				
+		model.addAttribute("roupa", roupa);
+		
+		return "alterar-roupa";
+	}
+	
+	@PostMapping("/roupas/alterar")
+	public String alterarRoupa (Roupa roupa){
+		this.roupaServiceImpl.alterarRoupa(roupa);
+		return "redirect:/roupas";
+	}
+	
+	@GetMapping("/roupas/excluir/{id}")
+	public String abrirExcluirRoupa(@PathVariable Long id) {
+		this.roupaServiceImpl.excluirRoupa(id);
+		
+		return "redirect:/roupas";
 }
+	}

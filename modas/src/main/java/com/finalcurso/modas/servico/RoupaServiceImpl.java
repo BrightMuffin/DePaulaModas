@@ -31,5 +31,20 @@ static List<Roupa> roupa = new ArrayList<Roupa>();
 
 
 
+	@Override
+	public void excluirRoupa(Long id) {
+		this.roupaRepositorio.deleteById(id);
+	}
+
+
+
+	@Override
+	public void alterarRoupa(Roupa roupa) {
+		this.roupaRepositorio.save(roupa);
+		
+	}
+
+
+
 
 }

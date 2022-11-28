@@ -8,4 +8,8 @@ public interface RoupaService {
 	public List<Roupa> listarRoupas();
 
 	public Roupa obterRoupa(Long id);
+
+	public void excluirRoupa(Long id);
+
+	public void alterarRoupa(Roupa roupa);
 }
